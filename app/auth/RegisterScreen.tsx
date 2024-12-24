@@ -20,15 +20,15 @@ export default function RegisterScreen() {
 			Alert.alert("Registration Successful", "You can now log in");
 			router.replace("/auth/LoginScreen");
 		} catch (error) {
-			Alert.alert("Registration Failed", (error as any).response?.data?.message || "An error occurred");
+			Alert.alert("Registration Failed", (error.response?.data?.message || "An error occurred"));
 		}
 	};
 
 	return (
 		<View style={styles.container}>
-			<View style={styles.header}> {/* Added a centered header view */}
+			<View style={styles.header}> 
 				<Image
-					source={require("../../assets/images/favicon1.png")}
+					source={require("../../assets/images/adan.jpg")}
 					style={styles.image}
 				/>
 				<Text style={styles.title}>Create an Account</Text>
@@ -38,6 +38,7 @@ export default function RegisterScreen() {
 			<TextInput
 				style={styles.input}
 				placeholder="Username"
+				placeholderTextColor="#a1a1a1"
 				value={username}
 				onChangeText={setUsername}
 				autoCapitalize="none"
@@ -45,6 +46,7 @@ export default function RegisterScreen() {
 			<TextInput
 				style={styles.input}
 				placeholder="Email"
+				placeholderTextColor="#a1a1a1"
 				value={email}
 				onChangeText={setEmail}
 				keyboardType="email-address"
@@ -53,6 +55,7 @@ export default function RegisterScreen() {
 			<TextInput
 				style={styles.input}
 				placeholder="Password"
+				placeholderTextColor="#a1a1a1"
 				value={password}
 				onChangeText={setPassword}
 				secureTextEntry
@@ -77,7 +80,7 @@ export default function RegisterScreen() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: "#78B3CE",
+		backgroundColor: "#0d0d0d",
 		padding: 16,
 	},
 	header: {
@@ -94,28 +97,28 @@ const styles = StyleSheet.create({
 	title: {
 		fontSize: 28,
 		fontWeight: "bold",
-		color: "#1A1A19",
+		color: "#f0f0f0",
 	},
 	subtitle: {
 		fontSize: 16,
-		color: "#64748B",
+		color: "#a1a1a1",
 	},
 	input: {
 		width: "100%",
 		height: 50,
-		borderColor: "#DFF2EB",
+		borderColor: "#444",
 		borderWidth: 1,
 		borderRadius: 8,
 		paddingHorizontal: 16,
 		marginBottom: 16,
-		backgroundColor: "#DFF2EB",
+		backgroundColor: "#1a1a1a",
 		fontSize: 16,
-		color: "#black",
+		color: "#f0f0f0",
 	},
 	registerButton: {
 		width: "100%",
 		height: 50,
-		backgroundColor: "#37AFE1",
+		backgroundColor: "#6a11cb",
 		borderRadius: 8,
 		justifyContent: "center",
 		alignItems: "center",
@@ -124,26 +127,24 @@ const styles = StyleSheet.create({
 		shadowOffset: { width: 0, height: 2 },
 		shadowOpacity: 0.1,
 		shadowRadius: 4,
-		color: "#37AFE1",
 	},
 	registerButtonText: {
-		color: "#54473F",
+		color: "#fff",
 		fontSize: 18,
 		fontWeight: "bold",
 	},
 	backButton: {
 		width: "100%",
 		height: 50,
-		borderColor: "#37AFE1",
-		backgroundColor: "#37AFE1",
+		borderColor: "#444",
+		backgroundColor: "#333",
 		borderWidth: 1,
 		borderRadius: 8,
 		justifyContent: "center",
 		alignItems: "center",
-		color: "#37AFE1",
 	},
 	backButtonText: {
-		color: "#54473F",
+		color: "#a1a1a1",
 		fontSize: 16,
 		fontWeight: "bold",
 	},

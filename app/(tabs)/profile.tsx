@@ -59,7 +59,7 @@ const ProfileScreen = () => {
     return (
         <PaperProvider>
             <ImageBackground
-                source={require('@/assets/images/favicon1.png')} 
+                
                 style={styles.container}
                 resizeMode="cover"
             >
